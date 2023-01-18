@@ -1,4 +1,49 @@
 ----------------------------------------------------------------
+-- https://wowpedia.fandom.com/wiki/Patch_10.0.2/API_changes
+----------------------------------------------------------------
+_G.ContainerIDToInventoryID = C_Container.ContainerIDToInventoryID
+_G.ContainerRefundItemPurchase = C_Container.ContainerRefundItemPurchase
+_G.GetBackpackAutosortDisabled = C_Container.GetBackpackAutosortDisabled
+_G.GetBagName = C_Container.GetBagName
+_G.GetBankAutosortDisabled = C_Container.GetBankAutosortDisabled
+_G.GetContainerFreeSlots = C_Container.GetContainerFreeSlots
+_G.GetContainerItemCooldown = C_Container.GetContainerItemCooldown
+_G.GetContainerItemDurability = C_Container.GetContainerItemDurability
+_G.GetContainerItemEquipmentSetInfo = C_Container.GetContainerItemEquipmentSetInfo
+_G.GetContainerItemID = C_Container.GetContainerItemID
+_G.GetContainerItemInfo = C_Container.GetContainerItemInfo
+_G.GetContainerItemLink = C_Container.GetContainerItemLink
+_G.GetContainerItemPurchaseCurrency = C_Container.GetContainerItemPurchaseCurrency
+_G.GetContainerItemPurchaseInfo = C_Container.GetContainerItemPurchaseInfo
+_G.GetContainerItemPurchaseItem = C_Container.GetContainerItemPurchaseItem
+_G.GetContainerItemQuestInfo = C_Container.GetContainerItemQuestInfo
+_G.GetContainerNumFreeSlots = C_Container.GetContainerNumFreeSlots
+_G.GetContainerNumSlots = C_Container.GetContainerNumSlots
+_G.GetInsertItemsLeftToRight = C_Container.GetInsertItemsLeftToRight
+_G.GetItemCooldown = C_Container.GetItemCooldown
+_G.GetMaxArenaCurrency = C_Container.GetMaxArenaCurrency
+_G.GetSortBagsRightToLeft = C_Container.GetSortBagsRightToLeft
+_G.IsBattlePayItem = C_Container.IsBattlePayItem
+_G.IsContainerFiltered = C_Container.IsContainerFiltered
+_G.PickupContainerItem = C_Container.PickupContainerItem
+_G.PlayerHasHearthstone = C_Container.PlayerHasHearthstone
+_G.SetBackpackAutosortDisabled = C_Container.SetBackpackAutosortDisabled
+_G.SetBagPortraitTexture = C_Container.SetBagPortraitTexture
+_G.SetBankAutosortDisabled = C_Container.SetBankAutosortDisabled
+_G.SetInsertItemsLeftToRight = C_Container.SetInsertItemsLeftToRight
+_G.SetItemSearch = C_Container.SetItemSearch
+_G.SetSortBagsRightToLeft = C_Container.SetSortBagsRightToLeft
+_G.ShowContainerSellCursor = C_Container.ShowContainerSellCursor
+_G.SocketContainerItem = C_Container.SocketContainerItem
+_G.SortBags = C_Container.SortBags
+_G.SortBankBags = C_Container.SortBankBags
+_G.SortReagentBankBags = C_Container.SortReagentBankBags
+_G.SplitContainerItem = C_Container.SplitContainerItem
+_G.UseContainerItem = C_Container.UseContainerItem
+_G.UseHearthstone = C_Container.UseHearthstone
+
+
+----------------------------------------------------------------
 -- https://wowpedia.fandom.com/wiki/Patch_10.0.0/API_changes
 ----------------------------------------------------------------
 _G.GetBagSlotFlag = C_Container.GetBagSlotFlag
@@ -47,47 +92,3 @@ then
 		end
 	end)
 end
-
-----------------------------------------------------------------
--- https://wowpedia.fandom.com/wiki/Patch_10.0.2/API_changes
-----------------------------------------------------------------
-_G.ContainerIDToInventoryID = C_Container.ContainerIDToInventoryID
-_G.ContainerRefundItemPurchase = C_Container.ContainerRefundItemPurchase
-_G.GetBackpackAutosortDisabled = C_Container.GetBackpackAutosortDisabled
-_G.GetBagName = C_Container.GetBagName
-_G.GetBankAutosortDisabled = C_Container.GetBankAutosortDisabled
-_G.GetContainerFreeSlots = C_Container.GetContainerFreeSlots
-_G.GetContainerItemCooldown = C_Container.GetContainerItemCooldown
-_G.GetContainerItemDurability = C_Container.GetContainerItemDurability
-_G.GetContainerItemEquipmentSetInfo = C_Container.GetContainerItemEquipmentSetInfo
-_G.GetContainerItemID = C_Container.GetContainerItemID
-_G.GetContainerItemInfo = C_Container.GetContainerItemInfo
-_G.GetContainerItemLink = C_Container.GetContainerItemLink
-_G.GetContainerItemPurchaseCurrency = C_Container.GetContainerItemPurchaseCurrency
-_G.GetContainerItemPurchaseInfo = C_Container.GetContainerItemPurchaseInfo
-_G.GetContainerItemPurchaseItem = C_Container.GetContainerItemPurchaseItem
-_G.GetContainerItemQuestInfo = C_Container.GetContainerItemQuestInfo
-_G.GetContainerNumFreeSlots = C_Container.GetContainerNumFreeSlots
-_G.GetContainerNumSlots = C_Container.GetContainerNumSlots
-_G.GetInsertItemsLeftToRight = C_Container.GetInsertItemsLeftToRight
-_G.GetItemCooldown = C_Container.GetItemCooldown
-_G.GetMaxArenaCurrency = C_Container.GetMaxArenaCurrency
-_G.GetSortBagsRightToLeft = C_Container.GetSortBagsRightToLeft
-_G.IsBattlePayItem = C_Container.IsBattlePayItem
-_G.IsContainerFiltered = C_Container.IsContainerFiltered
-_G.PickupContainerItem = C_Container.PickupContainerItem
-_G.PlayerHasHearthstone = C_Container.PlayerHasHearthstone
-_G.SetBackpackAutosortDisabled = C_Container.SetBackpackAutosortDisabled
-_G.SetBagPortraitTexture = C_Container.SetBagPortraitTexture
-_G.SetBankAutosortDisabled = C_Container.SetBankAutosortDisabled
-_G.SetInsertItemsLeftToRight = C_Container.SetInsertItemsLeftToRight
-_G.SetItemSearch = C_Container.SetItemSearch
-_G.SetSortBagsRightToLeft = C_Container.SetSortBagsRightToLeft
-_G.ShowContainerSellCursor = C_Container.ShowContainerSellCursor
-_G.SocketContainerItem = C_Container.SocketContainerItem
-_G.SortBags = C_Container.SortBags
-_G.SortBankBags = C_Container.SortBankBags
-_G.SortReagentBankBags = C_Container.SortReagentBankBags
-_G.SplitContainerItem = C_Container.SplitContainerItem
-_G.UseContainerItem = C_Container.UseContainerItem
-_G.UseHearthstone = C_Container.UseHearthstone
