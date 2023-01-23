@@ -11,7 +11,6 @@ _G.GetContainerItemCooldown = C_Container.GetContainerItemCooldown
 _G.GetContainerItemDurability = C_Container.GetContainerItemDurability
 _G.GetContainerItemEquipmentSetInfo = C_Container.GetContainerItemEquipmentSetInfo
 _G.GetContainerItemID = C_Container.GetContainerItemID
-_G.GetContainerItemInfo = C_Container.GetContainerItemInfo
 _G.GetContainerItemLink = C_Container.GetContainerItemLink
 _G.GetContainerItemPurchaseCurrency = C_Container.GetContainerItemPurchaseCurrency
 _G.GetContainerItemPurchaseInfo = C_Container.GetContainerItemPurchaseInfo
@@ -41,6 +40,15 @@ _G.SortReagentBankBags = C_Container.SortReagentBankBags
 _G.SplitContainerItem = C_Container.SplitContainerItem
 _G.UseContainerItem = C_Container.UseContainerItem
 _G.UseHearthstone = C_Container.UseHearthstone
+
+_G.GetContainerItemInfo = function(bagID, slot)
+	local Info = C_Container.GetContainerItemInfo(bagID, slot);
+	if (not Info) then
+		return nil;
+	end
+	return Info.iconFileID, Info.stackCount, Info.isLocked, Info.quality, Info.isReadable,
+	Info.hasLoot, Info.hyperlink, Info.isFiltered, Info.hasNoValue, Info.itemID, Info.isBound;
+end
 
 
 ----------------------------------------------------------------
