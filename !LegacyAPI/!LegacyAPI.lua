@@ -69,13 +69,11 @@ then
 		then
 			local frame = _G[name]
 			frame.SetMinResize = function(self, minWidth, minHeight ) 
-				frame._LEGACY_MIN_WIDTH = minWidth
-				frame._LEGACY_MIN_HEIGHT = minHeight
-				frame:SetResizeBounds(minWidth, minHeight)
+				local _, _, maxWidth, maxHeight = parentFrame:GetResizeBounds()
+				frame:SetResizeBounds(minWidth, minHeight, maxWidth, maxHeight)
 			end
 			frame.SetMaxResize = function(self, maxWidth, maxHeight ) 
-				local minWidth = frame._LEGACY_MIN_WIDTH or 0
-				local minHeight = frame._LEGACY_MIN_HEIGHT or 0
+				local minWidth, minHeight, _, _ = parentFrame:GetResizeBounds()
 				frame:SetResizeBounds(minWidth, minHeight, maxWidth, maxHeight)
 			end
 			hooksecurefunc(frame, "CreateTexture", function(self, name)
