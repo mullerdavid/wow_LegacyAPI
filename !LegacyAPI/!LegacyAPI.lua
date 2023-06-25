@@ -1,4 +1,18 @@
 ----------------------------------------------------------------
+-- https://wowpedia.fandom.com/wiki/Patch_10.1.0/API_changes
+----------------------------------------------------------------
+
+_G.GetNumQuestLogRewardSpells = function(questID)
+	return 0
+end
+
+-- _G.GetQuestLogRewardSpell =
+-- _G.GetNumQuestLogRewardSpells = 	
+-- _G.GetNumRewardSpells = _G.GetNumQuestLogRewardSpells
+-- _G.GetRewardSpell = _G.GetQuestLogRewardSpell
+-- _G.GetQuestSpellLink = _G.GetQuestLogSpellLink
+
+----------------------------------------------------------------
 -- https://wowpedia.fandom.com/wiki/Patch_10.0.2/API_changes
 ----------------------------------------------------------------
 _G.ContainerIDToInventoryID = C_Container.ContainerIDToInventoryID
@@ -69,32 +83,3 @@ _G.InteractUnit = C_PlayerInteractionManager.InteractUnit
 _G.IsReplacingUnit = C_PlayerInteractionManager.IsReplacingUnit
 _G.ReopenInteraction = C_PlayerInteractionManager.ReopenInteraction
 
--- Only works for named Frames/Textures
-if true
-then
-	hooksecurefunc(_G, "CreateFrame", function(frameType, name)
-		if name ~= nil and not issecurevariable(_G, name)
-		then
-			local frame = _G[name]
-			frame.SetMinResize = function(self, minWidth, minHeight ) 
-				local _, _, maxWidth, maxHeight = parentFrame:GetResizeBounds()
-				frame:SetResizeBounds(minWidth, minHeight, maxWidth, maxHeight)
-			end
-			frame.SetMaxResize = function(self, maxWidth, maxHeight ) 
-				local minWidth, minHeight, _, _ = parentFrame:GetResizeBounds()
-				frame:SetResizeBounds(minWidth, minHeight, maxWidth, maxHeight)
-			end
-			hooksecurefunc(frame, "CreateTexture", function(self, name)
-				if name ~= nil and not issecurevariable(_G, name)
-				then
-					local texture = _G[name]
-					texture.SetGradientAlpha = function(self, orientation, minR, minG, minB, minA, maxR, maxG, maxB, maxA ) 
-						local minColor = CreateColor(minR, minG, minB, minA)
-						local maxColor = CreateColor(maxR, maxG, maxB, maxA)
-						texture:SetGradient(orientation, minColor, maxColor)
-					end
-				end
-			end)
-		end
-	end)
-end
